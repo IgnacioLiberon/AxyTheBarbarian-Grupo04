@@ -15,6 +15,8 @@ public class Skeleton : MonoBehaviour
         if (Time.time >= nextThrowTime)
         {
             ThrowArrow();
+            ThrowArrow();
+            ThrowArrow();
             nextThrowTime = Time.time + throwCooldown;
         }
     }
