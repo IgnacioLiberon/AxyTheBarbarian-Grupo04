@@ -4,23 +4,22 @@ public class PlayerMovement : MonoBehaviour
 {
     // Speed of the player movement
     public float moveSpeed = 5f;
-
     private Vector2 inputDirection = Vector2.zero;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ProcessInput();
         UpdateState(Time.deltaTime);
     }
 
-    void ProcessInput()
+    private void ProcessInput()
     {
         float x = 0f;
         float y = 0f;
@@ -33,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
         inputDirection = new Vector2(x, y).normalized;
     }
 
-    void UpdateState(float deltaTime)
+    private void UpdateState(float deltaTime)
     {
         Vector2 movement = inputDirection * moveSpeed * deltaTime;
+        MoveTo(movement);
+    }
+
+    private void MoveTo(Vector2 movement)
+    {
         transform.Translate(movement);
     }
 }

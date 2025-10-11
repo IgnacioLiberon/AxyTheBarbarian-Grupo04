@@ -8,20 +8,32 @@ public class Skeleton : MonoBehaviour
     public Transform launchPoint; 
     
     public float throwCooldown = 2f; 
-    private float nextThrowTime;
+    private float stateTimer; //Time it remains during a state
 
-    void Update()
+    private void Update()
     {
-        if (Time.time >= nextThrowTime)
+        stateTimer -= Time.deltaTime;
+        UpdateState();
+    }
+
+    private void UpdateState()
+    {
+        //When the shooting state timer runs out, it exits and re-enters shooting state. Could add a reload state
+        if (stateTimer <= 0)
         {
-            ThrowArrow();
-            ThrowArrow();
-            ThrowArrow();
-            nextThrowTime = Time.time + throwCooldown;
+            ShootArrows();
+            stateTimer = throwCooldown;
         }
     }
 
-    void ThrowArrow()
+    private void ShootArrows()
+    {
+        ThrowArrow();
+        ThrowArrow();
+        ThrowArrow();
+    }
+
+    private void ThrowArrow()
     {
         // 1. Create the arrow at the launch point
         GameObject arrowObject = Instantiate(arrowPrefab, launchPoint.position, launchPoint.rotation);
