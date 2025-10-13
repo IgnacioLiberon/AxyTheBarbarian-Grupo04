@@ -52,8 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Collision trigger by " + collision.gameObject.name);
             rb.linearVelocity = Vector2.zero;
             EditorApplication.Beep();
         }
