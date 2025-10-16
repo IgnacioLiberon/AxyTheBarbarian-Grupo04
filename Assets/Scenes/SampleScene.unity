@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 15071446}
   - component: {fileID: 15071449}
   m_Layer: 0
-  m_Name: skeleton
+  m_Name: Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1075689449}
   - component: {fileID: 1075689448}
-  - component: {fileID: 1075689447}
+  - component: {fileID: 1075689453}
+  - component: {fileID: 1075689455}
+  - component: {fileID: 1075689454}
+  - component: {fileID: 1075689456}
   - component: {fileID: 1075689450}
   - component: {fileID: 1075689451}
   - component: {fileID: 1075689452}
@@ -543,19 +546,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1075689447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075689446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50e82a7c79e968418f5581548ebc30f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!212 &1075689448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -796,6 +786,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1075689453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075689446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd231125e508092b5b256fdc7cdb28f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateTimer: 0
+--- !u!114 &1075689454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075689446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e82a7c79e968418f5581548ebc30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+--- !u!114 &1075689455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075689446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83bbe3a83eb650277a4b5e711d2a0455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1075689456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075689446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9c42d801619cfd8a91f91baf3699ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionClip: {fileID: 0}
 --- !u!1 &1130476251
 GameObject:
   m_ObjectHideFlags: 0
