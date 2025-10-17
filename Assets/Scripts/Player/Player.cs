@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
     // Components
     private PlayerAudio audio;
     private PlayerInput input;
-    private PlayerMovement movement;
+    private Movement movement;
 
     private Vector2 inputDirection;
 
@@ -17,7 +18,7 @@ public class Player : Entity
         base.Awake();
         audio = GetComponent<PlayerAudio>();
         input = GetComponent<PlayerInput>();
-        movement = GetComponent<PlayerMovement>();
+        movement = GetComponent<Movement>();
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class Player : Entity
     {
         base.Update();
         inputDirection = input.inputDirection;
-        movement.Move(inputDirection, Time.deltaTime);
+        movement.Move(inputDirection);
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -35,6 +36,15 @@ public class Player : Entity
         {
             Debug.Log("Collision triggered by " + collision.gameObject.name);
             audio.PlayCollisionSound();
+
+            if (collision.gameObject.CompareTag("Enemy"))
+                RestartLevel();
         }
+    }
+
+    //Should def be on an exterior Game Manager Object, but here for testing
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

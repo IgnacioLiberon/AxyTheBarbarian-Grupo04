@@ -1,51 +1,25 @@
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class Skeleton : Entity
 {
-    public GameObject arrowPrefab; 
+    private Timer timer;
+    private Shoot shooter;
     
-    // Set the point on the skeleton where the arrow appears
-    public Transform launchPoint; 
-    
-    public float throwCooldown = 2f; 
-    private float stateTimer; //Time it remains during a state
-
-    private void Update()
+    protected override void Awake()
     {
-        stateTimer -= Time.deltaTime;
-        UpdateState();
+        base.Awake();
+        timer = GetComponent<Timer>();
+        shooter = GetComponent<Shoot>();
     }
 
-    private void UpdateState()
+    protected override void Update()
     {
-        //When the shooting state timer runs out, it exits and re-enters shooting state. Could add a reload state
-        if (stateTimer <= 0)
+        base.Update();
+
+        if (timer.hasTriggered)
         {
-            ShootArrows();
-            stateTimer = throwCooldown;
-        }
-    }
-
-    private void ShootArrows()
-    {
-        ThrowArrow();
-        ThrowArrow();
-        ThrowArrow();
-    }
-
-    private void ThrowArrow()
-    {
-        // 1. Create the arrow at the launch point
-        GameObject arrowObject = Instantiate(arrowPrefab, launchPoint.position, launchPoint.rotation);
-        
-        // 2. Get the Arrow script
-        Arrow arrowScript = arrowObject.GetComponent<Arrow>();
-        
-        // 3. Tell the arrow what direction to fly
-        if (arrowScript != null)
-        {
-            Vector2 throwDirection = new Vector2(Random.Range(0f, 1f), Random.Range(-1f, 0f)); 
-            arrowScript.SetDirection(throwDirection);
+            shooter.ShootArrows();
+            timer.SetTimer();
         }
     }
 }

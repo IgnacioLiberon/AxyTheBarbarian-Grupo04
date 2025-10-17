@@ -1,43 +1,21 @@
 using UnityEngine;
 
-public class Gazer : MonoBehaviour
+public class Gazer : Enemy
 {
-    private Vector2 topPos = new Vector2(2f, 3f);
-    private Vector2 bottomPos = new Vector2(2f, -3f);
+    private Movement movement;
+    private UpdateState state;
 
-    public float speed = 2f;
-
-    private bool goingUp = false;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    protected override void Awake()
     {
-
+        base.Awake();
+        movement = GetComponent<Movement>();
+        state = GetComponent<UpdateState>();
     }
 
     // Update is called once per frame
-    private void Update()
+    protected override void Update()
     {
-        UpdateState();
+        base.Update();
+        movement.MoveTo(state.target);
     }
-
-    private void UpdateState()
-    {
-        Vector2 target = goingUp ? topPos : bottomPos;
-        MoveTo(target);
-        ChangeDirection(target);
-    }
-
-    private void MoveTo(Vector2 target)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
-
-   private void ChangeDirection(Vector2 target)
-   {
-        if (Vector2.Distance(transform.position, target) < 0.05f)
-        {
-            goingUp = !goingUp;
-        }
-   }
 }
