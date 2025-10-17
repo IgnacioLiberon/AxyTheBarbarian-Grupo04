@@ -1,13 +1,14 @@
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
     // Components
-    private PlayerAudio audio;
+    private PlayerAudio sfx;
     private PlayerInput input;
     private Movement movement;
+
+    // Singletons
+    private GameManager gm;
 
     private Vector2 inputDirection;
 
@@ -16,9 +17,14 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
-        audio = GetComponent<PlayerAudio>();
+        sfx = GetComponent<PlayerAudio>();
         input = GetComponent<PlayerInput>();
         movement = GetComponent<Movement>();
+    }
+
+    private void Start()
+    {
+        gm = GameManager.instance;
     }
 
     // Update is called once per frame
@@ -32,19 +38,15 @@ public class Player : Entity
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision);
-        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Exit"))
         {
             Debug.Log("Collision triggered by " + collision.gameObject.name);
-            audio.PlayCollisionSound();
+            sfx.PlayCollisionSound();
 
             if (collision.gameObject.CompareTag("Enemy"))
-                RestartLevel();
+                gm.RestartLevel();
+            else if (collision.gameObject.CompareTag("Exit"))
+                gm.Win();
         }
-    }
-
-    //Should def be on an exterior Game Manager Object, but here for testing
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
