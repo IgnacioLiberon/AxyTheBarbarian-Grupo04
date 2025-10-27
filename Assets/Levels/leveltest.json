@@ -1,0 +1,29 @@
+{
+  "objects": [
+    {
+      "type": "Wall",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "type": "Wall",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "type": "Exit",
+      "x": 5,
+      "y": 0
+    },
+    {
+      "type": "Gazer",
+      "x": 2,
+      "y": 3
+    },
+    {
+      "type": "Skeleton",
+      "x": 3,
+      "y": 3
+    }
+  ]
+}

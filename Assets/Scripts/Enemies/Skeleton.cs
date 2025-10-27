@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour
 {
-    public GameObject arrowPrefab; 
-    
-    // Set the point on the skeleton where the arrow appears
-    public Transform launchPoint; 
-    
-    public float throwCooldown = 2f; 
-    private float stateTimer; //Time it remains during a state
+    [Header("Arrow Settings")]
+    public GameObject arrowPrefab;
+    public Transform launchPoint;
+    public int arrowsPerAttack = 3;
+    public Vector2 directionMin = new Vector2(0f, -1f);
+    public Vector2 directionMax = new Vector2(1f, 0f); 
+
+    [Header("Timing Settings")]
+    public float throwCooldown = 2f;
+    private float stateTimer;
+
+    private void Start()
+    {
+        stateTimer = throwCooldown;
+    }
 
     private void Update()
     {
@@ -18,8 +26,7 @@ public class Skeleton : MonoBehaviour
 
     private void UpdateState()
     {
-        //When the shooting state timer runs out, it exits and re-enters shooting state. Could add a reload state
-        if (stateTimer <= 0)
+        if (stateTimer <= 0f)
         {
             ShootArrows();
             stateTimer = throwCooldown;
@@ -28,24 +35,29 @@ public class Skeleton : MonoBehaviour
 
     private void ShootArrows()
     {
-        ThrowArrow();
-        ThrowArrow();
-        ThrowArrow();
+        for (int i = 0; i < arrowsPerAttack; i++)
+        {
+            ThrowArrow();
+        }
     }
 
     private void ThrowArrow()
     {
-        // 1. Create the arrow at the launch point
+        if (arrowPrefab == null || launchPoint == null) return;
+
         GameObject arrowObject = Instantiate(arrowPrefab, launchPoint.position, launchPoint.rotation);
-        
-        // 2. Get the Arrow script
         Arrow arrowScript = arrowObject.GetComponent<Arrow>();
-        
-        // 3. Tell the arrow what direction to fly
+
         if (arrowScript != null)
         {
-            Vector2 throwDirection = new Vector2(Random.Range(0f, 1f), Random.Range(-1f, 0f)); 
+            Vector2 throwDirection = new Vector2(
+                Random.Range(directionMin.x, directionMax.x),
+                Random.Range(directionMin.y, directionMax.y)
+            );
             arrowScript.SetDirection(throwDirection);
         }
     }
+
+    //TODO
+    //Velocity is calculated in the Controller, and movement in the Physics
 }

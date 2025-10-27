@@ -2,20 +2,25 @@ using UnityEngine;
 
 public class Gazer : MonoBehaviour
 {
-    private Vector2 topPos = new Vector2(2f, 3f);
-    private Vector2 bottomPos = new Vector2(2f, -3f);
-
+    [Header("Movement Settings")]
     public float speed = 2f;
+    public Vector2 offsetTop = new Vector2(0f, 3f);
+    public Vector2 offsetBottom = new Vector2(0f, -3f);
+
+    private Vector2 topPos;
+    private Vector2 bottomPos;
+    private Vector2 startPos;
 
     private bool goingUp = false;
+    private float tolerance = 0.05f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-
+        startPos = transform.position;
+        topPos = startPos + offsetTop;
+        bottomPos = startPos + offsetBottom;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         UpdateState();
@@ -33,11 +38,11 @@ public class Gazer : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
-   private void ChangeDirection(Vector2 target)
-   {
-        if (Vector2.Distance(transform.position, target) < 0.05f)
+    private void ChangeDirection(Vector2 target)
+    {
+        if (Vector2.Distance(transform.position, target) < tolerance)
         {
             goingUp = !goingUp;
         }
-   }
+    }
 }
