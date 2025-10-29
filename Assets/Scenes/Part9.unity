@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1481078923}
   - component: {fileID: 1481078922}
   m_Layer: 0
-  m_Name: Loader
+  m_Name: __LEVEL MANAGER__
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factory: {fileID: 179837660}
+  fileName: leveltest.json
+  loadFromFileHandler: 0
   levelFile: {fileID: 4900000, guid: 975d0cc4a83c42248ae060d38a265992, type: 3}
 --- !u!4 &1481078923
 Transform:
@@ -485,6 +487,7 @@ GameObject:
   - component: {fileID: 1834405876}
   - component: {fileID: 1834405874}
   - component: {fileID: 1834405875}
+  - component: {fileID: 1834405877}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -597,6 +600,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1716632866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!19719996 &1834405877
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834405873}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1001 &2073347345
 PrefabInstance:
   m_ObjectHideFlags: 0

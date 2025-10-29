@@ -1,37 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-
-[System.Serializable]
-public class LevelObjectData
-{
-    public string type;
-    public int x;
-    public int y;
-}
-
-[System.Serializable]
-public class LevelData
-{
-    public LevelObjectData[] objects;
-}
 
 public class LevelLoader : MonoBehaviour
 {
     public LevelObjectFactory factory;
-    public TextAsset levelFile;
+    [SerializeField] private string fileName = "leveltest.json";
+    [SerializeField] private bool encryptData = false;
+    private FileDataHandler dataHandler;
 
-    void Start()
+    private void Awake()
     {
-        if (levelFile == null)
+        dataHandler = new FileDataHandler(
+            Path.Combine(Application.dataPath, "Levels"),
+            fileName,
+            encryptData: encryptData
+        );
+    }
+    private void Start()
+    {
+        LevelData levelData = dataHandler.LoadData();
+
+        if (levelData == null)
         {
-            Debug.LogError("No se ha asignado el archivo de nivel");
+            Debug.LogError("Failed to load level data.");
             return;
         }
 
-        LevelData levelData = JsonUtility.FromJson<LevelData>(levelFile.text);
+        PopulateObjects(levelData);
+    }
 
-        foreach (var obj in levelData.objects)
+    private void PopulateObjects(LevelData data)
+    {
+        foreach (var obj in data.objects)
         {
             LevelObjectType type = (LevelObjectType)System.Enum.Parse(typeof(LevelObjectType), obj.type);
             factory.Create(type, new Vector3(obj.x, obj.y, 0));
