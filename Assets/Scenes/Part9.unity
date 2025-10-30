@@ -130,7 +130,11 @@ GameObject:
   - component: {fileID: 179837661}
   - component: {fileID: 179837660}
   m_Layer: 0
+<<<<<<< Updated upstream
   m_Name: Factory
+=======
+  m_Name: __FACTORY__
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,8 +155,12 @@ MonoBehaviour:
   exitPrefab: {fileID: 956917826019545259, guid: 9af36b897cdd4b5409e09ac8342db58f, type: 3}
   gazerPrefab: {fileID: 4041883320276053806, guid: 3c6a799d0b91b2c438e18dbadfc013e6, type: 3}
   skeletonPrefab: {fileID: 6082795717312053606, guid: 38bb885bc7558a44cb1d9438f3e9d38a, type: 3}
+<<<<<<< Updated upstream
   wallTilemap: {fileID: 1834405874}
   wallTile: {fileID: 11400000, guid: e6a9c80ea4a396040918dbe1c5e1606f, type: 2}
+=======
+  wallHandlerComponent: {fileID: 1716632870}
+>>>>>>> Stashed changes
 --- !u!4 &179837661
 Transform:
   m_ObjectHideFlags: 0
@@ -168,6 +176,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1188299072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188299074}
+  - component: {fileID: 1188299073}
+  m_Layer: 0
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1188299073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188299072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027d783df255caa8c80024ec9b057ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1188299074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188299072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5964198, y: -0.011888865, z: -0.019771751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1263423214
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +369,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481078923}
+<<<<<<< Updated upstream
   - component: {fileID: 1481078922}
+=======
+  - component: {fileID: 1481078924}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: __LEVEL MANAGER__
   m_TagString: Untagged
@@ -322,6 +381,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!114 &1481078922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +398,8 @@ MonoBehaviour:
   fileName: leveltest.json
   loadFromFileHandler: 0
   levelFile: {fileID: 4900000, guid: 975d0cc4a83c42248ae060d38a265992, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!4 &1481078923
 Transform:
   m_ObjectHideFlags: 0
@@ -353,6 +415,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1481078924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481078921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da87deb574108630480eaf5140592699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factory: {fileID: 179837660}
+  fileName: leveltest.json
+  encryptData: 0
+  test: {fileID: 1188299073}
+>>>>>>> Stashed changes
 --- !u!1 &1716632865
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,8 +444,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1716632866}
   - component: {fileID: 1716632869}
+<<<<<<< Updated upstream
   - component: {fileID: 1716632868}
   - component: {fileID: 1716632867}
+=======
+  - component: {fileID: 1716632870}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -388,6 +473,7 @@ Transform:
   - {fileID: 1834405876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!19719996 &1716632867
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -464,6 +550,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+=======
+>>>>>>> Stashed changes
 --- !u!156049354 &1716632869
 Grid:
   m_ObjectHideFlags: 0
@@ -476,6 +564,29 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1716632870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716632865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0e23f6326de0507b17be80d896560d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallNorth: {fileID: 11400000, guid: 9aaaa333517fa0d4296e943eb7cf77a9, type: 2}
+  wallSouth: {fileID: 11400000, guid: 5b55eee2b26817a45949c6204f49ec1d, type: 2}
+  wallEast: {fileID: 11400000, guid: db70450befd039e4b8fa5133f626385b, type: 2}
+  wallWest: {fileID: 11400000, guid: 52350a1b13364cc4aaf9f12c2b618e3a, type: 2}
+  wallCornerNE: {fileID: 11400000, guid: 2c74a402d048f64468c318255667b482, type: 2}
+  wallCornerNW: {fileID: 11400000, guid: 76e0331be7ad7e74dbb2c2a6945737dd, type: 2}
+  wallCornerSE: {fileID: 11400000, guid: a0f202d888a61cc4ca20c52bec2a13f6, type: 2}
+  wallCornerSW: {fileID: 11400000, guid: d974ea274e733e74ca38bbede23771f7, type: 2}
+>>>>>>> Stashed changes
 --- !u!1 &1834405873
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +811,15 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1263423217}
+<<<<<<< Updated upstream
   - {fileID: 179837661}
   - {fileID: 1716632866}
   - {fileID: 1481078923}
   - {fileID: 2073347345}
+=======
+  - {fileID: 1716632866}
+  - {fileID: 2073347345}
+  - {fileID: 179837661}
+  - {fileID: 1481078923}
+  - {fileID: 1188299074}
+>>>>>>> Stashed changes
