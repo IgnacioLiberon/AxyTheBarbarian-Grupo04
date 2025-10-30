@@ -130,11 +130,7 @@ GameObject:
   - component: {fileID: 179837661}
   - component: {fileID: 179837660}
   m_Layer: 0
-<<<<<<< Updated upstream
-  m_Name: Factory
-=======
   m_Name: __FACTORY__
->>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,12 +151,7 @@ MonoBehaviour:
   exitPrefab: {fileID: 956917826019545259, guid: 9af36b897cdd4b5409e09ac8342db58f, type: 3}
   gazerPrefab: {fileID: 4041883320276053806, guid: 3c6a799d0b91b2c438e18dbadfc013e6, type: 3}
   skeletonPrefab: {fileID: 6082795717312053606, guid: 38bb885bc7558a44cb1d9438f3e9d38a, type: 3}
-<<<<<<< Updated upstream
-  wallTilemap: {fileID: 1834405874}
-  wallTile: {fileID: 11400000, guid: e6a9c80ea4a396040918dbe1c5e1606f, type: 2}
-=======
   wallHandlerComponent: {fileID: 1716632870}
->>>>>>> Stashed changes
 --- !u!4 &179837661
 Transform:
   m_ObjectHideFlags: 0
@@ -176,8 +167,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1188299072
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +211,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &1263423214
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,11 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1481078923}
-<<<<<<< Updated upstream
-  - component: {fileID: 1481078922}
-=======
   - component: {fileID: 1481078924}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: __LEVEL MANAGER__
   m_TagString: Untagged
@@ -381,25 +365,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!114 &1481078922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481078921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f905d69c976ae4eb1205e8c8e2151d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  factory: {fileID: 179837660}
-  fileName: leveltest.json
-  loadFromFileHandler: 0
-  levelFile: {fileID: 4900000, guid: 975d0cc4a83c42248ae060d38a265992, type: 3}
-=======
->>>>>>> Stashed changes
 --- !u!4 &1481078923
 Transform:
   m_ObjectHideFlags: 0
@@ -415,8 +380,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1481078924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +396,6 @@ MonoBehaviour:
   fileName: leveltest.json
   encryptData: 0
   test: {fileID: 1188299073}
->>>>>>> Stashed changes
 --- !u!1 &1716632865
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,12 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716632866}
   - component: {fileID: 1716632869}
-<<<<<<< Updated upstream
-  - component: {fileID: 1716632868}
-  - component: {fileID: 1716632867}
-=======
   - component: {fileID: 1716632870}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -473,85 +430,6 @@ Transform:
   - {fileID: 1834405876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!19719996 &1716632867
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716632865}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!1839735485 &1716632868
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716632865}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-=======
->>>>>>> Stashed changes
 --- !u!156049354 &1716632869
 Grid:
   m_ObjectHideFlags: 0
@@ -564,8 +442,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1716632870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +462,6 @@ MonoBehaviour:
   wallCornerNW: {fileID: 11400000, guid: 76e0331be7ad7e74dbb2c2a6945737dd, type: 2}
   wallCornerSE: {fileID: 11400000, guid: a0f202d888a61cc4ca20c52bec2a13f6, type: 2}
   wallCornerSW: {fileID: 11400000, guid: d974ea274e733e74ca38bbede23771f7, type: 2}
->>>>>>> Stashed changes
 --- !u!1 &1834405873
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,15 +686,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1263423217}
-<<<<<<< Updated upstream
-  - {fileID: 179837661}
-  - {fileID: 1716632866}
-  - {fileID: 1481078923}
-  - {fileID: 2073347345}
-=======
   - {fileID: 1716632866}
   - {fileID: 2073347345}
   - {fileID: 179837661}
   - {fileID: 1481078923}
   - {fileID: 1188299074}
->>>>>>> Stashed changes
