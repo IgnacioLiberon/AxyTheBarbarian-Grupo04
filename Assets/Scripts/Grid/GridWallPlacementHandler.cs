@@ -31,6 +31,16 @@ public class GridWallPlacementHandler : MonoBehaviour, IWallPlacementHandler
         wallTilemap.SetTile(gridPos, tile);
     }
 
+    public void ClearTile(Vector3Int gridPos)
+    {
+        if (wallTilemap == null)
+        {
+            Debug.LogWarning("No Tilemap assigned to GridWallPlacementHandler.");
+            return;
+        }
+        wallTilemap.SetTile(gridPos, null);
+    }
+
     private TileBase GetTileForVariant(WallVariant variant)
     {
         return variant switch

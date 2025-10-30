@@ -6,7 +6,9 @@ public class LevelManager : MonoBehaviour
     public LevelObjectFactory factory;
     [SerializeField] private string fileName = "leveltest.json";
     [SerializeField] private bool encryptData = false;
-    private FileDataHandler dataHandler;
+
+    private LevelData loadedLevel;
+    public FileDataHandler dataHandler;
 
     private void Awake()
     {
@@ -18,15 +20,22 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        LevelData levelData = dataHandler.LoadData();
+        loadedLevel = dataHandler.LoadData();
 
-        if (levelData == null)
+        if (loadedLevel == null)
         {
             Debug.LogError("Failed to load level data.");
             return;
         }
 
-        PopulateObjects(levelData);
+        PopulateObjects(loadedLevel);
+    }
+
+    public LevelData GetLoadedLevel() => loadedLevel;
+
+    public void SaveLevel(LevelData data)
+    {
+        dataHandler.SaveData(data);
     }
 
     private void PopulateObjects(LevelData data)
