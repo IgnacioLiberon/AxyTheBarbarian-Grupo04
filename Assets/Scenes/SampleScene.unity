@@ -1371,6 +1371,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c6a799d0b91b2c438e18dbadfc013e6, type: 3}
+--- !u!1001 &4165502627254257101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 496194527473871075, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: stoppingDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893606648152630757, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_Name
+      value: HungryZombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.86126655
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.17418283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.030006729
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701402823978903868, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
 --- !u!1001 &4886180703096330350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1440,6 +1501,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3660388289998938958, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661337809522169169, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
+      propertyPath: MinDistance
+      value: 1.1171441
+      objectReference: {fileID: 0}
     - target: {fileID: 6685466232707926675, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07556421
@@ -1494,5 +1563,6 @@ SceneRoots:
   - {fileID: 5954737192902616249}
   - {fileID: 1406484320429022299}
   - {fileID: 145506892}
+  - {fileID: 4165502627254257101}
   - {fileID: 1130476253}
   - {fileID: 2123402111}
