@@ -151,6 +151,7 @@ MonoBehaviour:
   exitPrefab: {fileID: 956917826019545259, guid: 9af36b897cdd4b5409e09ac8342db58f, type: 3}
   gazerPrefab: {fileID: 4041883320276053806, guid: 3c6a799d0b91b2c438e18dbadfc013e6, type: 3}
   skeletonPrefab: {fileID: 6082795717312053606, guid: 38bb885bc7558a44cb1d9438f3e9d38a, type: 3}
+  ratPrefab: {fileID: 2864641054814978804, guid: e8ee1043577ffb342a443429fcecad9e, type: 3}
   wallHandlerComponent: {fileID: 1716632870}
 --- !u!4 &179837661
 Transform:
@@ -177,6 +178,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3660388289998938958, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660388289998938958, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6685466232707926675, guid: 6111bd4bb4dffd748b4e960c2cdfbc96, type: 3}
@@ -257,6 +262,7 @@ MonoBehaviour:
   sceneCamera: {fileID: 0}
   currentType: 0
   currentSubtype: North
+  editingEnabled: 1
 --- !u!4 &1130749576
 Transform:
   m_ObjectHideFlags: 0
@@ -454,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factory: {fileID: 179837660}
-  fileName: leveltest.json
+  fileName: levelrat.json
   encryptData: 0
 --- !u!1 &1716632865
 GameObject:
