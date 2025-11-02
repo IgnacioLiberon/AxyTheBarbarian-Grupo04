@@ -6,5 +6,6 @@ public enum LevelObjectType
     Exit,
     Gazer,
     Skeleton,
-    Rat
+    Rat,
+    HungryZombie
 }

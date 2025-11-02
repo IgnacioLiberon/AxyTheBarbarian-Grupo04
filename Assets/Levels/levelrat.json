@@ -377,6 +377,18 @@
             "subtype": "North",
             "x": 6,
             "y": -3
+        },
+        {
+            "type": "HungryZombie",
+            "subtype": "North",
+            "x": -10,
+            "y": 5
+        },
+        {
+            "type": "Rat",
+            "subtype": "North",
+            "x": -5,
+            "y": 0
         }
     ]
 }

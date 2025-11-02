@@ -28,16 +28,16 @@ public class Rat : MonoBehaviour
             }
             else
             {
-                wander();
+                Wander();
             }
         }
         else
         {
-            wander();
+            Wander();
         }
     }
 
-    void wander()
+    private void Wander()
     {
         currentTime += Time.deltaTime;
         var wanderDirection = new Vector3(Mathf.Cos(direction), Mathf.Sin(direction), 0);

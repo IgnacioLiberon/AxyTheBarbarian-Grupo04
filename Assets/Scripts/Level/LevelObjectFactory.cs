@@ -10,6 +10,8 @@ public class LevelObjectFactory : MonoBehaviour
     public GameObject skeletonPrefab;
     public GameObject ratPrefab;
 
+    public GameObject zombiePrefab;
+
     [Header("Wall Handler")]
     public MonoBehaviour wallHandlerComponent;
     private IWallPlacementHandler wallHandler;
@@ -53,6 +55,11 @@ public class LevelObjectFactory : MonoBehaviour
             case LevelObjectType.Rat:
                 if (ratPrefab != null)
                     Instantiate(ratPrefab, gridPosition, Quaternion.identity);
+                break;
+            
+            case LevelObjectType.HungryZombie:
+                if (zombiePrefab != null)
+                    Instantiate(zombiePrefab, gridPosition, Quaternion.identity);
                 break;
         }
     }

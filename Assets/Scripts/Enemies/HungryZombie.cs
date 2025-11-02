@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HungryZombieFollow : MonoBehaviour
+public class HungryZombie : MonoBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] private float moveSpeed = 2f;

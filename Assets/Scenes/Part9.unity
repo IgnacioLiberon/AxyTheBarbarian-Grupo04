@@ -152,6 +152,7 @@ MonoBehaviour:
   gazerPrefab: {fileID: 4041883320276053806, guid: 3c6a799d0b91b2c438e18dbadfc013e6, type: 3}
   skeletonPrefab: {fileID: 6082795717312053606, guid: 38bb885bc7558a44cb1d9438f3e9d38a, type: 3}
   ratPrefab: {fileID: 2864641054814978804, guid: e8ee1043577ffb342a443429fcecad9e, type: 3}
+  zombiePrefab: {fileID: 1893606648152630757, guid: c5f5a0692a75e874aa5230ee6bbf1222, type: 3}
   wallHandlerComponent: {fileID: 1716632870}
 --- !u!4 &179837661
 Transform:
