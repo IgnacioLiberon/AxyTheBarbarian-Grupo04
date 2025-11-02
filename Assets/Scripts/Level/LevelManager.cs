@@ -4,7 +4,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public LevelObjectFactory factory;
-    [SerializeField] private string fileName = "leveltest.json";
+    [SerializeField] private string fileName = "levelrat.json";
     [SerializeField] private bool encryptData = false;
 
     private LevelData loadedLevel;

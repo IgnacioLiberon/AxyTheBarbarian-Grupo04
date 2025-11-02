@@ -5,5 +5,6 @@ public enum LevelObjectType
     Wall,
     Exit,
     Gazer,
-    Skeleton
+    Skeleton,
+    Rat
 }
