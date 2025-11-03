@@ -19,6 +19,7 @@ public class GridWallPlacementHandler : MonoBehaviour, IWallPlacementHandler
     {
         wallTilemap = GetComponentInChildren<Tilemap>();
     }
+    public Tilemap WallTilemap => wallTilemap;
 
    public void PlaceWall(Vector3Int gridPos, WallVariant variant)
     {
