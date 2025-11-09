@@ -389,6 +389,12 @@
             "subtype": "North",
             "x": -5,
             "y": 0
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": 11,
+            "y": -2
         }
     ]
 }

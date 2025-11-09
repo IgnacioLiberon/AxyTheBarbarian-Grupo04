@@ -1,64 +1,63 @@
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyAI))]
 public class Rat : MonoBehaviour
 {
-    float direction = 0.0f;
-    float velocity = 2.0f;
-    float timeToChange = 2.0f;
-    float currentTime = 0.0f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private EnemyAI ai;
+
+    private void Awake()
     {
-        currentTime = 0.0f;
+        ai = GetComponent<EnemyAI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        var gamePlayer = GameObject.FindWithTag("Player");
-        if (gamePlayer != null)
+        if (ai == null)
         {
-            var playerPosition = gamePlayer.transform.position;
-            var ratPosition = transform.position;
-            var distance = Vector3.Distance(playerPosition, ratPosition);
-
-            if (distance < 5.0f)
-            {
-                flee(gamePlayer);
-            }
-            else
-            {
-                Wander();
-            }
-        }
-        else
-        {
-            Wander();
-        }
-    }
-
-    private void Wander()
-    {
-        currentTime += Time.deltaTime;
-        var wanderDirection = new Vector3(Mathf.Cos(direction), Mathf.Sin(direction), 0);
-        transform.position += wanderDirection * velocity * Time.deltaTime;
-        if (currentTime < timeToChange)
-        {
+            Debug.LogError("Missing EnemyAI script");
             return;
         }
-        else
-        {
-            currentTime = 0.0f;
-        }
-        direction += Random.Range(0.0f, 1.0f) * Mathf.PI * 2.0f;
+
+        ai.rootNode = CreateDefaultDecisionTree();
     }
-    
-    void flee(GameObject player)
+
+    private Node CreateDefaultDecisionTree()
     {
-        currentTime = 0.0f;
-        var playerPosition = player.transform.position;
-        var ratPosition = transform.position;
-        var fleeDirection = (ratPosition - playerPosition).normalized;
-        transform.position += fleeDirection * velocity * Time.deltaTime;
+        // --- Evaluators ---
+        var distanceEval = ScriptableObject.CreateInstance<DistanceDecisionEvaluator>();
+        distanceEval.threshold = 5f;
+
+        var daytimeEval = ScriptableObject.CreateInstance<DaytimeEvaluator>();
+
+        // --- Decisions ---
+        var nearPlayerDecision = ScriptableObject.CreateInstance<ObjectDecision>();
+        nearPlayerDecision.evaluator = distanceEval;
+
+        var isDaytimeDecision = ScriptableObject.CreateInstance<ObjectDecision>();
+        isDaytimeDecision.evaluator = daytimeEval;
+
+        // --- Actions ---
+        var wanderAction = ScriptableObject.CreateInstance<ActionNode>();
+        wanderAction.actionName = "Wander";
+
+        var fleeAction = ScriptableObject.CreateInstance<ActionNode>();
+        fleeAction.actionName = "Flee";
+
+        var chaseAction = ScriptableObject.CreateInstance<ActionNode>();
+        chaseAction.actionName = "Chase";
+
+        // --- Binary Nodes ---
+        var dayNightBranch = ScriptableObject.CreateInstance<BinaryDecisionNode>();
+        dayNightBranch.decision = isDaytimeDecision;
+        dayNightBranch.yesNode = fleeAction;  // if daytime
+        dayNightBranch.noNode = chaseAction;  // if nighttime
+
+        var distanceBranch = ScriptableObject.CreateInstance<BinaryDecisionNode>();
+        distanceBranch.decision = nearPlayerDecision;
+        distanceBranch.yesNode = dayNightBranch;
+        distanceBranch.noNode = wanderAction;
+
+        // Root node of the rat AI
+        return distanceBranch;
     }
 }
