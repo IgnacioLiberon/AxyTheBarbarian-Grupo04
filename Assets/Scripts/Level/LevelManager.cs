@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Day/Night Time Cycle Properties")]
     [SerializeField] private float dayDuration = 60f;
+    [SerializeField] private string timeOfDay = "Day";
     public bool IsDaytime => currentTime < dayDuration; // Example 1-min day cycle
     private float currentTime = 0f;
 
@@ -45,6 +46,8 @@ public class LevelManager : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > dayDuration * 2)
             currentTime = 0f;
+
+        timeOfDay = IsDaytime ? "Day" : "Night";
     }
 
     public LevelData GetLoadedLevel() => loadedLevel;

@@ -395,6 +395,72 @@
             "subtype": "North",
             "x": 11,
             "y": -2
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -13,
+            "y": 8
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -13,
+            "y": 6
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -12,
+            "y": 6
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -12,
+            "y": 5
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -11,
+            "y": 5
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -11,
+            "y": 4
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -8,
+            "y": 4
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -11,
+            "y": 2
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": -11,
+            "y": 0
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": 2,
+            "y": -1
+        },
+        {
+            "type": "Wall",
+            "subtype": "North",
+            "x": 5,
+            "y": -3
         }
     ]
 }

@@ -117,3 +117,7 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   velocity: 2
   direction: 0
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 0.5

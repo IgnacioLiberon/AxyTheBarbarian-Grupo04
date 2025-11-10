@@ -7,6 +7,10 @@ public class EnemyAI : MonoBehaviour
     public float velocity = 2f;
     public float direction;
     private float currentTime;
+    
+    [Header("Collision Detection")]
+    public LayerMask wallLayerMask = -1;
+    public float raycastDistance = 0.5f; 
 
     private void Start()
     {
@@ -39,7 +43,16 @@ public class EnemyAI : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         Vector3 wanderDir = new Vector3(Mathf.Cos(direction), Mathf.Sin(direction), 0);
-        transform.position += wanderDir * velocity * Time.deltaTime;
+        
+        if (CanMove(wanderDir))
+        {
+            transform.position += wanderDir * velocity * Time.deltaTime;
+        }
+        else
+        {
+            direction = Random.Range(0.0f, Mathf.PI * 2f);
+            currentTime = 0f;
+        }
 
         if (currentTime >= 2.0f)
         {
@@ -54,7 +67,18 @@ public class EnemyAI : MonoBehaviour
         if (player == null) return;
 
         Vector3 fleeDir = (transform.position - player.transform.position).normalized;
-        transform.position += fleeDir * velocity * Time.deltaTime;
+        if (CanMove(fleeDir))
+        {
+            transform.position += fleeDir * velocity * Time.deltaTime;
+        }
+        else
+        {
+            Vector3 alternativeDir = GetAlternativeDirection(fleeDir);
+            if (CanMove(alternativeDir))
+            {
+                transform.position += alternativeDir * velocity * Time.deltaTime;
+            }
+        }
     }
 
     private void Chase()
@@ -63,6 +87,42 @@ public class EnemyAI : MonoBehaviour
         if (player == null) return;
 
         Vector3 dir = (player.transform.position - transform.position).normalized;
-        transform.position += dir * velocity * Time.deltaTime;
+        
+        if (CanMove(dir))
+        {
+            transform.position += dir * velocity * Time.deltaTime;
+        }
+        else
+        {
+            Vector3 alternativeDir = GetAlternativeDirection(dir);
+            if (CanMove(alternativeDir))
+            {
+                transform.position += alternativeDir * velocity * Time.deltaTime;
+            }
+        }
+    }
+
+    private bool CanMove(Vector3 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, wallLayerMask);
+        return hit.collider == null;
+    }
+
+    private Vector3 GetAlternativeDirection(Vector3 blockedDirection)
+    {
+
+        float angle = Mathf.Atan2(blockedDirection.y, blockedDirection.x) + Mathf.PI / 4;
+        Vector3 rightDir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+        
+        if (CanMove(rightDir))
+            return rightDir;
+        
+        angle = Mathf.Atan2(blockedDirection.y, blockedDirection.x) - Mathf.PI / 4;
+        Vector3 leftDir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+        
+        if (CanMove(leftDir))
+            return leftDir;
+        
+        return new Vector3(-blockedDirection.y, blockedDirection.x, 0);
     }
 }
